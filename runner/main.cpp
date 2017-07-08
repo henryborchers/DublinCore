@@ -11,14 +11,14 @@ using namespace std;
 int main() {
     Printer p;
     Root root;
-    Element ElContributor;
+    Element element_contributor;
     ofstream file;
 
-    ElContributor.setKey("contributor");
-    ElContributor.setValue("Henry");
-    ElContributor.setAttribute("Sex", "Male");
-    root.setElement(ElContributor);
-    root.setName("asas");
+    element_contributor.setKey("title");
+    element_contributor.setValue("Henry");
+    element_contributor.setAttribute("Sex", "Male");
+    root.setElement(element_contributor);
+    root.setName("Person");
 
     root.setElement("date", "January 19, 1985");
     const std::string xml = p.print(root);

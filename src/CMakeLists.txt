@@ -1,14 +1,13 @@
-project(DublinCore VERSION 0.0.1)
 # List public headers to be used so that they install
 
 set(PUBLIC_HEADERS
-        ${PROJECT_SOURCE_DIR}/include/DublinCore/DublinCore.h
-        ${PROJECT_SOURCE_DIR}/include/DublinCore/Element.h
-        ${PROJECT_SOURCE_DIR}/include/DublinCore/Printer.h
-        ${PROJECT_SOURCE_DIR}/include/DublinCore/Root.h
+        include/DublinCore/DublinCore.h
+        include/DublinCore/Element.h
+        include/DublinCore/Printer.h
+        include/DublinCore/Root.h
         )
 
-set(targets_export_name "${PROJECT_NAME}Targets")
+set(targets_export_name "DublinCoreTargets")
 
 # Add library source headers
 add_library(DublinCore
@@ -16,6 +15,7 @@ add_library(DublinCore
         Element.cpp
         Root.cpp
         Printer.cpp
+        ${PUBLIC_HEADERS}
         )
 
 # Make an alias so it works exactly the same when including it as a subproject
@@ -32,7 +32,7 @@ target_include_directories(DublinCore
 
         # Public headers that are included with project when used elsewhere
         PUBLIC
-            $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include/DublinCore>
+            $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include/DublinCore>
             $<INSTALL_INTERFACE:include>
 
         # Headers only being used by this library

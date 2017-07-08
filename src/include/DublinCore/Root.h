@@ -11,7 +11,7 @@
 class Printer;
 class Element;
 class Root {
-    std::string name;
+    std::string name; //!< Name of the root element
     std::map<std::string, Element> elements;
     friend class Printer;
 public:

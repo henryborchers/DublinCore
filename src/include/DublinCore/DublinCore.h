@@ -25,6 +25,7 @@
 #include "Element.h"
 #include "Root.h"
 #include "Printer.h"
+#include "Render.h"
 
 /*!
  * \brief Prints hello to the standard output

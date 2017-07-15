@@ -30,3 +30,6 @@ Root::Root(): name("root") {
 const Element Root::getElement(const std::string &key) {
     return elements[key];
 }
+const std::map<std::string, Element> &Root::getElements() const {
+    return elements;
+}

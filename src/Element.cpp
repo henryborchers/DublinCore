@@ -1,7 +1,3 @@
-//
-// Created by Borchers, Henry Samuel on 6/24/17.
-//
-
 #include "Element.h"
 
 const std::string &Element::getKey() const {

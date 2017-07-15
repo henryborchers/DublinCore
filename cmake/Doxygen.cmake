@@ -3,7 +3,6 @@ if (DOXYGEN_FOUND)
         doxygen_add_docs(DublinCoreDocsHTML
                 ${CMAKE_CURRENT_SOURCE_DIR}/src
                 COMMENT "Generate html docs")
-        add_dependencies(DublinCore DublinCoreDocsHTML)
     endfunction()
 
     function(build_MAN_docs)
@@ -12,7 +11,6 @@ if (DOXYGEN_FOUND)
         doxygen_add_docs(DublinCoreDocsMAN
                 ${CMAKE_CURRENT_SOURCE_DIR}/src
                 COMMENT "Generate MAN page docs")
-        add_dependencies(DublinCore DublinCoreDocsMAN)
     endfunction()
 
     function(build_RTF_docs)
@@ -21,7 +19,6 @@ if (DOXYGEN_FOUND)
         doxygen_add_docs(DublinCoreDocsRTF
                 ${CMAKE_CURRENT_SOURCE_DIR}/src
                 COMMENT "Generate RTF page docs")
-        add_dependencies(DublinCore DublinCoreDocsRTF)
     endfunction()
 
     function(build_LATEX_docs)
@@ -30,6 +27,5 @@ if (DOXYGEN_FOUND)
         doxygen_add_docs(DublinCoreDocsLATEX
                 ${CMAKE_CURRENT_SOURCE_DIR}/src
                 COMMENT "Generate LATEX page docs")
-        add_dependencies(DublinCore DublinCoreDocsLATEX)
     endfunction()
 endif ()

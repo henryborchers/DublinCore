@@ -7,16 +7,14 @@
 
 #include <string>
 #include <map>
-
+#include "Element.h"
 class Printer;
-class Element;
 class Root {
     std::string name; //!< Name of the root element
     std::map<std::string, Element> elements;
     friend class Printer;
 public:
     Root();
-
     const std::string &getName() const;
 
     void setName(const std::string &name);
@@ -25,6 +23,8 @@ public:
     void setElement(const std::string &key, const std::string &value);
 
     const Element getElement(const std::string &key);
+
+    const std::map<std::string, Element> &getElements() const;
 };
 
 

@@ -64,8 +64,41 @@ TEST_CASE("Printer", "[Printer]") {
         root.setElement("contributor", "Henry");
         root.setElement("date", "January 19, 1985");
 
-        REQUIRE(p.print(root) == "<root><contributor>Henry</contributor><date>January 19, 1985</date></root>");
+        REQUIRE(p.print(root) ==
+                        "<root>"
+                        "<contributor>Henry</contributor>"
+                        "<date>January 19, 1985</date>"
+                        "</root>"
+        );
     }
 
 
+}
+
+TEST_CASE("Render", "[Render]") {
+    Renderer renderer;
+    Root root;
+    root.setElement("contributor", "Henry");
+    root.setElement("date", "January 19, 1985");
+
+    renderer.set_source(root);
+
+    SECTION("Set XML", "[XML]") {
+        renderer.set_output_format(OutputFormat::XML);
+        REQUIRE(renderer.render() ==
+                        "<root>"
+                        "<contributor>Henry</contributor>"
+                        "<date>January 19, 1985</date>"
+                        "</root>"
+        );
+    }
+    SECTION("Set JSON", "[XML]") {
+        renderer.set_output_format(OutputFormat::JSON);
+        REQUIRE(renderer.render() ==
+                        "{\n"
+                        "    \"contributor\": \"Henry\"\n"
+                        "    \"date\": \"January 19, 1985\"\n"
+                        "}\n"
+        );
+    }
 }

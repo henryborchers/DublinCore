@@ -5,7 +5,7 @@ set(PUBLIC_HEADERS
         include/DublinCore/Element.h
         include/DublinCore/Printer.h
         include/DublinCore/Root.h
-        )
+        include/DublinCore/Render.h)
 
 set(targets_export_name "DublinCoreTargets")
 
@@ -14,6 +14,7 @@ add_library(DublinCore
         DublinCore.cpp
         Element.cpp
         Root.cpp
+        Render.cpp
         Printer.cpp
         ${PUBLIC_HEADERS}
         )
